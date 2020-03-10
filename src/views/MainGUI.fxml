@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Controller">
+    <children>
+        <MenuBar maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="900.0" VBox.vgrow="NEVER">
+            <menus>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="New" />
+                        <MenuItem mnemonicParsing="false" text="Open…" />
+                        <MenuItem mnemonicParsing="false" text="Save As…" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" onAction="#quitApp" text="Quit" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="About" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <SplitPane dividerPositions="0.13251670378619154, 0.5" focusTraversable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="900.0" VBox.vgrow="ALWAYS">
+            <items>
+                <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="110.0">
+                    <children>
+                        <Label alignment="CENTER" layoutX="30.0" layoutY="14.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="Actions" textAlignment="CENTER" wrapText="false">
+                            <font>
+                                <Font size="18.0" fx:id="x1" />
+                            </font>
+                            <textFill>
+                                <Color blue="0.624" green="0.624" red="0.624" fx:id="x2" />
+                            </textFill>
+                        </Label>
+                        <Button layoutX="15.0" layoutY="50.0" mnemonicParsing="false" onAction="#add" prefHeight="25.0" prefWidth="90.0" text="Add" />
+                        <Button layoutX="15.0" layoutY="90.0" mnemonicParsing="false" onAction="#edit" prefHeight="25.0" prefWidth="90.0" text="Edit" />
+                        <Button layoutX="15.0" layoutY="130.0" mnemonicParsing="false" onAction="#delete" prefHeight="25.0" prefWidth="90.0" text="Delete" />
+                        <Label alignment="CENTER" layoutX="30.0" layoutY="181.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="Search" textAlignment="CENTER" wrapText="false">
+                            <textFill>
+                                <Color blue="0.624" green="0.624" red="0.624" fx:id="x22" />
+                            </textFill>
+                            <font>
+                                <Font size="18.0" fx:id="x12" />
+                            </font>
+                        </Label>
+                        <Button layoutX="15.0" layoutY="220.0" mnemonicParsing="false" onAction="#searchAll" prefHeight="25.0" prefWidth="90.0" text="See All" />
+                        <Button layoutX="15.0" layoutY="260.0" mnemonicParsing="false" onAction="#searchByGuest" prefHeight="25.0" prefWidth="90.0" text="See Guest" />
+                        <Button layoutX="15.0" layoutY="300.0" mnemonicParsing="false" onAction="#searchByCountry" prefHeight="25.0" prefWidth="90.0" text="See Country" />
+                        <Button layoutX="15.0" layoutY="340.0" mnemonicParsing="false" onAction="#searchByDate" prefHeight="25.0" prefWidth="90.0" text="See Date" />
+                        <Button layoutX="15.0" layoutY="380.0" mnemonicParsing="false" onAction="#searchByRoom" prefHeight="25.0" prefWidth="90.0" text="See Room" />
+                    </children>
+                </AnchorPane>
+                <AnchorPane id="Content" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="520.0">
+                    <children>
+                        <TableView id="stayTable" fx:id="stayTable" fixedCellSize="25.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="520.0">
+                            <columns>
+                                <TableColumn id="dateColumn" fx:id="dateColumn" editable="false" maxWidth="200.0" minWidth="50.0" prefWidth="100.0" resizable="false" text="Date" />
+                                <TableColumn fx:id="nameColumn" editable="false" maxWidth="200.0" minWidth="60.0" prefWidth="160.0" resizable="false" styleClass="text-center" text="Name" />
+                                <TableColumn fx:id="surnameColumn" editable="false" maxWidth="200.0" minWidth="100.0" prefWidth="160.0" resizable="false" text="Surname" />
+                                <TableColumn fx:id="roomColumn" editable="false" maxWidth="180.0" minWidth="50.0" prefWidth="90.0" resizable="false" text="Room" />
+                            </columns>
+                        </TableView>
+                    </children>
+                </AnchorPane>
+                <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="270.0">
+                    <children>
+                        <SplitPane dividerPositions="0.45072992700729925, 0.6824817518248175" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="550.0" prefWidth="270.0">
+                            <items>
+                                <AnchorPane>
+                                    <children>
+                                        <Label alignment="CENTER" layoutX="100.0" layoutY="15.0" style="&#10;" text="Guest" textAlignment="CENTER" wrapText="false">
+                                            <font>
+                                                <Font size="18.0" fx:id="x11" />
+                                            </font>
+                                            <textFill>
+                                                <Color blue="0.624" green="0.624" red="0.624" fx:id="x21" />
+                                            </textFill>
+                                        </Label>
+                                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="15.0" layoutY="50.0" maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="60.0" text="Select" textAlignment="RIGHT" />
+                                        <ComboBox fx:id="guestSelect" layoutX="90.0" layoutY="50.0" prefHeight="25.0" prefWidth="150.0" promptText="New" />
+                                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="15.0" layoutY="90.0" maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="60.0" text="Name" textAlignment="RIGHT" />
+                                        <TextField fx:id="nameTextField" editable="false" layoutX="90.0" layoutY="90.0" prefHeight="25.0" prefWidth="150.0" />
+                                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="15.0" layoutY="130.0" prefHeight="25.0" prefWidth="60.0" text="Surname" textAlignment="RIGHT" />
+                                        <TextField fx:id="surnameTextField" editable="false" layoutX="90.0" layoutY="130.0" prefHeight="25.0" prefWidth="150.0" />
+                                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="15.0" layoutY="170.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="60.0" text="ID" textAlignment="CENTER" />
+                                        <TextField fx:id="CITextField" editable="false" layoutX="90.0" layoutY="170.0" prefHeight="25.0" prefWidth="150.0" />
+                                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="15.0" layoutY="210.0" prefHeight="25.0" prefWidth="60.0" text="Country" textAlignment="RIGHT" />
+                                        <AnchorPane layoutX="90.0" layoutY="210.0" prefHeight="25.0" prefWidth="150.0">
+                                            <children>
+                                                <ImageView fx:id="flagImage" fitHeight="21.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="2.0" AnchorPane.topAnchor="2.0">
+                                                    <viewport>
+                                                        <Rectangle2D />
+                                                    </viewport>
+                                                </ImageView>
+                                                <ComboBox fx:id="countrySelect" accessibleRole="IMAGE_VIEW" layoutX="31.0" prefHeight="25.0" prefWidth="120.0" />
+                                            </children>
+                                        </AnchorPane>
+                                    </children>
+                                </AnchorPane>
+                                <AnchorPane>
+                                    <children>
+                                        <Label alignment="CENTER" layoutX="100.0" layoutY="15.0" style="&#10;" text="Room" textAlignment="CENTER" wrapText="false">
+                                            <font>
+                                                <Font size="18.0" fx:id="x1111" />
+                                            </font>
+                                            <textFill>
+                                                <Color blue="0.624" green="0.624" red="0.624" fx:id="x2111" />
+                                            </textFill>
+                                        </Label>
+                                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="15.0" layoutY="50.0" prefHeight="25.0" prefWidth="60.0" text="Select" textAlignment="RIGHT" />
+                                        <ComboBox fx:id="roomSelect" layoutX="90.0" layoutY="50.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="150.0" promptText="New" />
+                                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="15.0" layoutY="90.0" prefHeight="25.0" prefWidth="60.0" text="Room" textAlignment="RIGHT" />
+                                        <TextField fx:id="roomTextField" editable="false" layoutX="90.0" layoutY="90.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="150.0" />
+                                    </children>
+                                </AnchorPane>
+                                <AnchorPane>
+                                    <children>
+                                        <Label alignment="CENTER" layoutX="100.0" layoutY="15.0" style="&#10;" text="Date" textAlignment="CENTER" wrapText="false">
+                                            <font>
+                                                <Font size="18.0" fx:id="x111" />
+                                            </font>
+                                            <textFill>
+                                                <Color blue="0.624" green="0.624" red="0.624" fx:id="x211" />
+                                            </textFill>
+                                        </Label>
+                                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="15.0" layoutY="50.0" prefHeight="25.0" prefWidth="60.0" text="In" textAlignment="RIGHT" />
+                                        <DatePicker fx:id="inDate" editable="false" layoutX="90.0" layoutY="50.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="150.0" />
+                                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="15.0" layoutY="90.0" prefHeight="25.0" prefWidth="60.0" text="Out" textAlignment="RIGHT" />
+                                        <DatePicker fx:id="outDate" editable="false" layoutX="90.0" layoutY="90.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="150.0" />
+                                        <Button fx:id="saveButton" defaultButton="true" layoutX="75.0" layoutY="130.0" mnemonicParsing="false" onAction="#save" prefHeight="25.0" prefWidth="120.0" text="Save" />
+                                    </children>
+                                </AnchorPane>
+                            </items>
+                        </SplitPane>
+                    </children>
+                </AnchorPane>
+            </items>
+        </SplitPane>
+        <HBox id="HBox" alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="900.0" spacing="5.0" VBox.vgrow="NEVER">
+            <children>
+                <Label fx:id="statusLabel" maxHeight="1.7976931348623157E308" maxWidth="-1.0" text="Left status" HBox.hgrow="ALWAYS">
+                    <font>
+                        <Font size="11.0" fx:id="x3" />
+                    </font>
+                    <textFill>
+                        <Color blue="0" green="0" red="0" fx:id="x4" />
+                    </textFill>
+                </Label>
+            </children>
+            <padding>
+                <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+            </padding>
+        </HBox>
+    </children>
+</VBox>
